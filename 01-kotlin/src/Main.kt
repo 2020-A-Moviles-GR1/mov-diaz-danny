@@ -1,6 +1,6 @@
 import java.util.*
 
-fun main(args:Array<String>){
+fun main(args:Array<String>) {
     // se basa en funciones ya no en clases
     print("Hola")
 
@@ -37,6 +37,86 @@ fun main(args:Array<String>){
 
     calcularSueldo(1000.00, 14.00)
     calcularSueldo(sueldo=800.00, tasa=16.00)
+
+
+    // clase 15-06-2020
+    val arregloConstante: Array<Int> = arrayOf(1,2,3)
+    val arregloCumpleanos: ArrayList<Int> = arrayListOf(30, 31, 32)
+    print(arregloCumpleanos)
+    arregloCumpleanos.add(24)
+    print(arregloCumpleanos)
+    arregloCumpleanos.remove(30)
+    print(arregloCumpleanos)
+
+    // El forEach no devuelve nada (unit)
+
+    arregloCumpleanos
+            .forEach{
+                println("Valor de la iteración $it")  // + it
+            }
+
+    val res = arregloCumpleanos
+            .forEach { valorIteracion: Int ->
+                println("Valor de la iteración $valorIteracion")
+                println("Valor con -1 = ${valorIteracion * -1}")
+
+            }
+
+
+    arregloCumpleanos
+            .forEach (
+                    { valorIteracion: Int ->
+                        println("Valor de la iteración $valorIteracion")
+                    }
+            )
+
+    arregloCumpleanos
+            .forEachIndexed{ index:Int, it:Int ->
+                        println("-Valor de la iteración $it")
+                        println("--Valor de la index $index")
+                    }
+
+
+    println(res)  // unit
+
+
+    val arregloCumpleanosMenos1 = arregloCumpleanos
+            .map{iterador:Int ->
+                iterador * -1
+            }
+    println(arregloCumpleanosMenos1)
+    println(arregloCumpleanos)
+
+
+    val respuestaMapDos: List<String> = arregloCumpleanos
+            .map{iterador:Int ->
+                val nuevoVal = iterador * -1
+                val otroVal = nuevoVal * 2
+                return@map otroVal.toString()
+            }
+    println(respuestaMapDos)
+    println(arregloCumpleanos)
+
+
+    val respuestaMayores23 =
+            arregloCumpleanos.filter {iteracion:Int ->
+                val esMayorA23 = iteracion > 23
+                return@filter esMayorA23
+            }
+
+    val respuestaMayores23Linea =
+            arregloCumpleanos.filter {
+                iteracion:Int -> iteracion > 23
+            }
+
+    println(respuestaMayores23)
+    println(respuestaMayores23Linea)
+
+
+
+
+
+
 
 }
 
