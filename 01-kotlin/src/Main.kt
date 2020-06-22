@@ -163,12 +163,30 @@ fun main(args:Array<String>) {
     // No usar For a menos que sea necesario
 
 
+    val nuevoNumeroUno = SumarDosNumeros(1, 1)
+    val nuevoNumeroDos = SumarDosNumeros(null, 1)
+    val nuevoNumeroTres = SumarDosNumeros(1, null)
+    val nuevoNumeroCuatro = SumarDosNumeros(null, null)
 
+    println(SumarDosNumeros.arregloNumeros)
+    println(SumarDosNumeros.agregarNumero(1))
+    println(SumarDosNumeros.arregloNumeros)
+    println(SumarDosNumeros.eliminarNumero(0))
+    println(SumarDosNumeros.arregloNumeros)
 
+    var nombre: String? = null
+    nombre = "Danny"
+    imprimir_nombre(nombre)
 
+}
 
+fun imprimir_nombre(nombre: String?){
+    println(nombre?.length)  // Elvis operator
+                            //Null safe calls
+    println(nombre?.length?.toChar())
 
-
+    val numeroCar:Unit = if (nombre != null)
+    val numeroCaracteres:Int? = nombre?.length
 }
 
 fun calcularSueldo(
@@ -201,20 +219,66 @@ abstract class NumerosJava{
 }
 
 abstract class Numeros(  //val clsN = Numeros()
-    val numeroUno:Int,
-    val numeroDos:Int
-){
-
+    var numeroUno:Int,
+    var numeroDos:Int
+) {
 }
 
-
 class Suma(
-        private val uno: Int,
-        private val dos: Int
+        uno: Int,  //sin var o val, son propiedades
+        dos: Int
 ):Numeros(uno, dos){  //herencia
 
     public fun sumar(): Int{
         return this.numeroUno + this.numeroDos
     }
+}
+
+
+class SumarDosNumeros(
+        uno: Int,  //sin var o val, son propiedades
+        dos: Int
+):Numeros(uno, dos){  //herencia
+
+    init {
+        println("Hola INIT")
+    }
+
+    constructor(uno:Int?, dos:Int):
+            this(if (uno == null) 0 else uno, dos){
+
+        this.numeroUno = if (uno == null) 0 else uno  // uno ?: 0
+        this.numeroDos = dos
+        println("Hola, constructor 1")
+    }
+
+    constructor(uno:Int, dos:Int?):
+            this(uno, if (dos == null) 0 else dos){
+        this.numeroDos = if (dos == null) 0 else dos  // uno ?: 0
+        this.numeroUno = uno
+        println("Hola, constructor 2")
+    }
+
+    constructor(uno:Int?, dos:Int?):
+            this(if (uno == null) 0 else uno, if (dos == null) 0 else dos){
+        this.numeroUno = if (uno == null) 0 else uno  // uno ?: 0
+        this.numeroDos = if (dos == null) 0 else dos
+        println("Hola, constructor 3")
+    }
+
+    companion object{
+        val arregloNumerosInicial = arrayListOf(1, 2, 3, 4)
+        val arregloNumeros = arrayListOf(1, 2, 3, 4)
+
+        fun agregarNumero(nuevoNumero:Int){
+            this.arregloNumeros.add(nuevoNumero)
+        }
+
+        fun eliminarNumero(posicionNumero:Int){
+            this.arregloNumeros.removeAt(posicionNumero)
+        }
+    }
+
+
 }
 
