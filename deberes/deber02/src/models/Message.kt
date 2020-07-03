@@ -1,0 +1,29 @@
+package models
+
+class Message(
+    val sender: String,
+    val message_id: Number,
+    var content: String,
+    var date_creation: String,
+    var modified: Boolean = false,
+    var ping_registered: Number = 50.6
+) {
+
+
+    init {
+        messages_created_counter += 1
+    }
+
+    fun read() : String{
+        return "INFORMACIÓN DEL MENSAJE\nId: ${this.message_id}\nEmisor: ${this.sender}\nFecha de creación ${this.date_creation}\nModificado: " + (if(this.modified) "si" else "no")+"\nPing registrado (ms): ${this.ping_registered}\nContenido: \n${this.content}\n"
+    }
+
+    companion object{
+        var messages_created_counter = if(loadData(Parameters.dir_relative_files + Parameters.filename_messages_created) != "") loadData(Parameters.dir_relative_files + Parameters.filename_messages_created).toInt() else 0
+
+        fun generateNewId(): Int{
+            return messages_created_counter + 1
+        }
+
+    }
+}
