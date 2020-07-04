@@ -25,5 +25,11 @@ class Message(
             return messages_created_counter + 1
         }
 
+        fun messagesToStringListNames(messages: ArrayList<Message>): Array<Any> {
+            var listMessagesNames: ArrayList<Any> = arrayListOf()
+            messages.forEach { listMessagesNames.add( it.message_id.toString() + "->" + it.sender + ": " + (if(it.modified) "(editado) " else "") + it.content) }
+            return listMessagesNames.toTypedArray()
+        }
+
     }
 }
