@@ -9,7 +9,6 @@ public class MainView {
     public JButton buttonDetails;
     public JButton buttonUpdate;
     public JButton buttonCreate;
-    public JButton buttonRefresh;
     public JButton buttonViewMessages;
     public JButton buttonDelete;
     public JPanel panel;

@@ -1,11 +1,15 @@
 package models
 
+import java.security.MessageDigest
+
+
 class ChatGroup(
     val chat_id: Number,
     var name_group: String,
     var date_creation: String,
     var active: Boolean = true,
-    var mean_delay: Number = 50.6
+    var mean_delay: Number = 50.6,
+    var password: String = "root123"
 ) {
 
 
@@ -39,6 +43,7 @@ class ChatGroup(
         fun saveDataChatGroups(chat_groups: ArrayList<ChatGroup>){
             storeData(chatGroupsToRawString(chat_groups), Parameters.dir_relative_files + Parameters.filename_chat_groups)
             storeData(chats_created_counter.toString(), Parameters.dir_relative_files + Parameters.filename_chats_created)
+            storeData(Message.messages_created_counter.toString(), Parameters.dir_relative_files + Parameters.filename_messages_created)
         }
 
         fun loadDataChatGroups(): ArrayList<ChatGroup> {
@@ -48,6 +53,9 @@ class ChatGroup(
         private fun rawStringToChatGroups(raw_chat_groups: String): ArrayList<ChatGroup>{
 
             val chat_groups: ArrayList<ChatGroup> = arrayListOf()
+
+            if(raw_chat_groups == "")
+                return chat_groups
 
             raw_chat_groups.split(Parameters.SEPARATOR_OBJECTS).toTypedArray()
                 .forEach {
@@ -59,8 +67,8 @@ class ChatGroup(
                     val date_creation = raw_chat_group[index++]
                     val active = raw_chat_group[index++].toBoolean()
                     val mean_delay = raw_chat_group[index++].toFloat()  // Siempre aumentar el índice si se agrega otro atributo
-
-                    val chat_group = ChatGroup(chat_id, name_group, date_creation, active, mean_delay)
+                    val password = raw_chat_group[index++]
+                    val chat_group = ChatGroup(chat_id, name_group, date_creation, active, mean_delay, password)
 
                     if(raw_chat_group[index] != "")
                         chat_group.messages = rawStringToMessages(raw_chat_group[index])
@@ -79,6 +87,7 @@ class ChatGroup(
                 raw_chat_groups += it.date_creation + Parameters.SEPARATOR_ATTRIBUTES
                 raw_chat_groups += it.active.toString() + Parameters.SEPARATOR_ATTRIBUTES
                 raw_chat_groups += it.mean_delay.toString() + Parameters.SEPARATOR_ATTRIBUTES
+                raw_chat_groups += it.password + Parameters.SEPARATOR_ATTRIBUTES
                 raw_chat_groups += messagesToRawString(it.messages)
 
                 if(index < chat_groups.size - 1){
@@ -132,6 +141,12 @@ class ChatGroup(
             }
 
             return raw_messages
+        }
+
+        fun chatGroupsToStringListNames(chatGroups: ArrayList<ChatGroup>): Array<Any> {
+            var listChatGroupsNames: ArrayList<Any> = arrayListOf()
+            chatGroups.forEach { listChatGroupsNames.add(it.name_group) }
+            return listChatGroupsNames.toTypedArray()
         }
 
     }
