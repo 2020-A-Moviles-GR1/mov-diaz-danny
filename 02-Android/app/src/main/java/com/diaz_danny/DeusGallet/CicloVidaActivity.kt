@@ -2,6 +2,7 @@ package com.diaz_danny.DeusGallet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_ciclo_vida.*
 
@@ -56,4 +57,23 @@ class CicloVidaActivity : AppCompatActivity() {
         super.onRestart()
         Log.i(TAG, "onRestart")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.i(TAG, "onSaveInstanceState simple")
+        outState.run {
+            putInt("numeroActualGuardado", numeroActual)
+        }
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i(TAG, "onRestoreInstanceState")
+        val valorRecuperado = savedInstanceState.getInt("numeroActualGuardado")
+        if(valorRecuperado != null){
+            this.numeroActual = valorRecuperado
+            textViewNumero.text = this.numeroActual.toString()
+        }
+    }
+
 }
