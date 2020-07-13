@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, CicloVidaActivity::class.java));
         }
 
+
+        buttonListView.setOnClickListener{
+            startActivity(Intent(applicationContext, ListViewActivity::class.java));
+        }
+
     }
 
 
