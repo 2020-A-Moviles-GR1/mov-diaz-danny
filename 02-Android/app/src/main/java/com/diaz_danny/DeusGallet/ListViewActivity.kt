@@ -3,6 +3,7 @@ package com.diaz_danny.DeusGallet
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_list_view.*
@@ -35,6 +36,15 @@ class ListViewActivity : AppCompatActivity() {
             parent, view, position, id ->
             Log.i(TAG, "Posicion $position")
         }
+
+        buttonAdd.setOnClickListener({
+            listaEntrenadores.add(Entrenador("Nuevo", "Dato"))
+            
+            adaptador.notifyDataSetChanged()
+
+            listViewNumeros.setSelection(listaEntrenadores.size-1)
+
+        })
 
 
     }
