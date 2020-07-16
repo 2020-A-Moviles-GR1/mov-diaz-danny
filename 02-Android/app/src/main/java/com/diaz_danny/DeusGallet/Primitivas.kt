@@ -5,4 +5,8 @@ class Entrenador(
     var apellido: String
 ){
 
+    override fun toString(): String {
+        return "${this.nombre} ${this.apellido}"
+    }
+
 }
