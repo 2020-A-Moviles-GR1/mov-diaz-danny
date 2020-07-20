@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, ListViewActivity::class.java));
         }
 
+        buttonIntentRespuesta.setOnClickListener{
+            val intentExplicito = Intent(this, IntentEnviaParametrosActivity::class.java)
+            intentExplicito.putExtra("numero", 2)
+            startActivity(intentExplicito)
+        }
+
     }
 
 
