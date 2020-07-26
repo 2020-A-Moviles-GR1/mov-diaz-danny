@@ -1,5 +1,6 @@
 package com.diaz_danny.DeusGallet
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,5 +30,26 @@ class IntentEnviaParametrosActivity : AppCompatActivity() {
             }
 
         )
+
+        buttonRespuestaAceptar.setOnClickListener({
+            val nombre = "Danny"
+            val edad = 22
+            val intentRespuesta = Intent()
+            intentRespuesta.putExtra("nombre", nombre)
+            intentRespuesta.putExtra("edad", edad)
+
+            setResult(Activity.RESULT_OK, intentRespuesta)
+
+            finish()
+        })
+
+        buttonRespuestaCancelar.setOnClickListener({
+
+            val intentCancelado = Intent()
+
+            setResult(Activity.RESULT_CANCELED, intentCancelado)
+
+            finish()
+        })
     }
 }
