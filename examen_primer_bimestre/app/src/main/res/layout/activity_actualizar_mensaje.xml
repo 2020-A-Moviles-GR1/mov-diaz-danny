@@ -89,7 +89,7 @@
 
 
         <TextView
-            android:id="@+id/ActualizarMensajeModificado"
+            android:id="@+id/textViewActualizarMensajeModificado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -118,7 +118,7 @@
 
 
         <TextView
-            android:id="@+id/ActualizarMensajeEmisor"
+            android:id="@+id/textViewActualizarMensajeEmisor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -149,7 +149,7 @@
         <EditText
             android:id="@+id/editTextActualizarMensajeContenido"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text" />

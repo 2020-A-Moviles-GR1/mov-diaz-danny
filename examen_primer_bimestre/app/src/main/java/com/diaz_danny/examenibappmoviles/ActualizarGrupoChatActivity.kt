@@ -23,8 +23,14 @@ class ActualizarGrupoChatActivity : AppCompatActivity() {
         editTextActualizarGrupoChatNombre.setText(ChatGroup.companion_chat_groups.get(grupoChatPosition).name_group)
         editTextActualizarGrupoChatContrasenia.setText(ChatGroup.companion_chat_groups.get(grupoChatPosition).password)
 
+        spinnerActualizarGrupoChatActivo.setSelection(if(ChatGroup.companion_chat_groups.get(grupoChatPosition).active) 0 else 1)
+
         buttonActualizarGrupoChatActualizar.setOnClickListener({
-            // todo: actualizar
+            ChatGroup.companion_chat_groups.get(grupoChatPosition).name_group = editTextActualizarGrupoChatNombre.text.toString()
+            ChatGroup.companion_chat_groups.get(grupoChatPosition).password = editTextActualizarGrupoChatContrasenia.text.toString()
+            ChatGroup.companion_chat_groups.get(grupoChatPosition).active = spinnerActualizarGrupoChatActivo.selectedItemPosition == 0
+
+
             setResult(Activity.RESULT_OK)
             finish()
         })

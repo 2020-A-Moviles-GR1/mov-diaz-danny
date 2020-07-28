@@ -13,6 +13,8 @@ import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_chat.*
 import models.ChatGroup
 import models.Message
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatActivity : AppCompatActivity() {
 
@@ -43,10 +45,28 @@ class ChatActivity : AppCompatActivity() {
 
         configureListView()
 
-        buttonChatCrear.setOnClickListener({
-           // todo: crear
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val today = sdf.format(Date())
 
+        buttonChatCrear.setOnClickListener({
+
+            val sender = spinnerChatIntegrante.selectedItem.toString()
+            val message_content = editTextChatMensaje.text.toString()
+
+            if(message_content == ""){
+                Toast.makeText(this, "El mensaje no puede estar vacío", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener;
+            }
+           ChatGroup.companion_chat_groups.get(grupoChatPosition).messages.add(
+               Message(sender, Message.generateNewId(), message_content, today, false, Math.random())
+           )
             actualizarListView()
+            editTextChatMensaje.setText("")
+        })
+
+        buttonChatRegresar.setOnClickListener({
+            setResult(Activity.RESULT_CANCELED)
+            finish()
         })
 
 
@@ -77,7 +97,7 @@ class ChatActivity : AppCompatActivity() {
                 when(which){
                     0 -> {
 
-                        val intentActualizarMensaje = Intent(this, ActualizarGrupoChatActivity::class.java)
+                        val intentActualizarMensaje = Intent(this, ActualizarMensajeActivity::class.java)
                         intentActualizarMensaje.putExtra("grupoChatPosition", grupoChatPosition)
                         intentActualizarMensaje.putExtra("mensajePosition", position)
                         startActivityForResult(intentActualizarMensaje, REQUEST_CODE_ACTUALIZAR_MENSAJE)
@@ -85,7 +105,7 @@ class ChatActivity : AppCompatActivity() {
                     }
 
                     1 -> {
-                        // todo: eliminar
+                        ChatGroup.companion_chat_groups.get(grupoChatPosition).messages.removeAt(position)
                         actualizarListView()
                     }
 

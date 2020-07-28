@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_crear_grupo_chat.*
+import models.ChatGroup
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
+import java.util.*
 
 class CrearGrupoChatActivity : AppCompatActivity() {
 
@@ -20,15 +23,27 @@ class CrearGrupoChatActivity : AppCompatActivity() {
             finish()
             return
         }
-        val today = "2020-07-12 "// LocalDateTime.now().toString()
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val today = sdf.format(Date())
+
         textViewCrearGrupoChatId.text = id_generada.toString()
         textViewCrearGrupoChatFecha.text = today
 
 
 
         buttonCrearGrupoChatCrear.setOnClickListener({
-            //todo: codigo de creación
+            val name_group = editTextCrearGrupoChatNombre.text.toString()
+            val active = spinnerCrearGrupoChatActivo.selectedItemPosition == 0
+            val password = editTextCrearGrupoChatContrasenia.text.toString()
+
+
+            ChatGroup.companion_chat_groups.add(ChatGroup(
+                id_generada, name_group, today, active,
+                Math.random(),
+                password
+            ))
             setResult(Activity.RESULT_OK)
+            finish()
         })
 
         buttonCrearGrupoChatCancelar.setOnClickListener({

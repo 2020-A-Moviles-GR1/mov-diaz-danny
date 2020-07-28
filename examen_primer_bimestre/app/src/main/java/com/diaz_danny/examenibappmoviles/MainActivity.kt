@@ -19,11 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val REQUEST_CODE_CONTRASENIA: Int = 99
     private val REQUEST_CODE_ACTUALIZAR_GRUPO_CHAT: Int = 101
 
-    val adaptador = ArrayAdapter(
-        this,  // contexto
-        android.R.layout.simple_list_item_1,  // nombre de layout
-        ChatGroup.companion_chat_groups  // lista
-    )
+    lateinit var adaptador: ArrayAdapter<ChatGroup>;
 
 
     val TAG = "MainActivity"
@@ -32,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        this.adaptador = ArrayAdapter(
+            this,  // contexto
+            android.R.layout.simple_list_item_1,  // nombre de layout
+            ChatGroup.companion_chat_groups  // lista
+        )
+
         configureListView()
 
         buttonMainAgregarGrupoChat.setOnClickListener({
@@ -39,6 +41,8 @@ class MainActivity : AppCompatActivity() {
             intentCrearGrupoChat.putExtra("id", ChatGroup.generateNewId())
             startActivityForResult(intentCrearGrupoChat, REQUEST_CODE_CREAR_GRUPO_CHAT)
         })
+
+
 
 
 
@@ -71,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     1 -> {
-                        // todo: eliminar
+                        ChatGroup.companion_chat_groups.removeAt(position)
                         actualizarListView()
                     }
 
