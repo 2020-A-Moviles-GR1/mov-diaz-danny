@@ -15,4 +15,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRespuestaAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonDevolverRespuesta"
+        app:layout_constraintStart_toStartOf="@+id/buttonDevolverRespuesta"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDevolverRespuesta" />
+
+    <Button
+        android:id="@+id/buttonRespuestaCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRespuestaAceptar"
+        app:layout_constraintStart_toStartOf="@+id/buttonRespuestaAceptar"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRespuestaAceptar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
