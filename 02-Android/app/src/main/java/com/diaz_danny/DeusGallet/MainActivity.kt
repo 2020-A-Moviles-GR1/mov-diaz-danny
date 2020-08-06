@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +29,12 @@ class MainActivity : AppCompatActivity() {
         buttonIntentRespuesta.setOnClickListener{
             val intentExplicito = Intent(this, IntentEnviaParametrosActivity::class.java)
             intentExplicito.putExtra("numero", 2)
+            val danny = Usuario("Danny", 22, Date(), 1.0)
+            val cachetes = Mascota("Cachetes", danny)
+            val arreglo_mascotas = arrayListOf<Mascota>(cachetes, cachetes)
+
+            intentExplicito.putExtra("cachetes", cachetes)
+            intentExplicito.putExtra("arregloMascotas", arreglo_mascotas)
             startActivity(intentExplicito)
         }
 
@@ -38,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonRespuestaPropia.setOnClickListener{
             val intentExplicito = Intent(this, IntentEnviaParametrosActivity::class.java)
+
             startActivityForResult(intentExplicito, 305)
         }
 
