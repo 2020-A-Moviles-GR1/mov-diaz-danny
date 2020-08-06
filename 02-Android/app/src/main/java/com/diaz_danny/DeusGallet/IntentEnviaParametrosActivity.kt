@@ -24,6 +24,20 @@ class IntentEnviaParametrosActivity : AppCompatActivity() {
             Log.i(TAG, "El texto es: ${textoCompartido}")
         }
 
+        val cachetes = intent.getParcelableExtra<Mascota>("cachetes")
+        if(cachetes != null){
+            Log.i(TAG, "${cachetes.nombre} - ${cachetes.duenio?.nombre}")
+        }
+
+        val mascotas = intent.getParcelableArrayListExtra<Mascota>("arregloMascotas")
+        if(mascotas != null){
+            mascotas.forEach {
+                Log.i(TAG, "De arreglo: ${it.nombre} - ${it.duenio?.nombre}")
+            }
+        }
+
+
+
         buttonDevolverRespuesta.setOnClickListener(
             {
                 finish()
