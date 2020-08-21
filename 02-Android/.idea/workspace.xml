@@ -12,12 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7319ab29-34e3-49f3-b029-e168ff969500" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/Mascota.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/Usuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/IntentEnviaParametrosActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/IntentEnviaParametrosActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/diaz_danny/DeusGallet/MainActivity.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +64,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="7.3_Foldable_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-06T13:27:52.761Z" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/motion_gestures_detection-master/motion_gestures_detection-master/MotionGesturesDemo" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
