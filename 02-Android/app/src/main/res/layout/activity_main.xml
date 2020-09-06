@@ -69,4 +69,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonIntentImplicito"
         app:layout_constraintTop_toBottomOf="@+id/buttonRespuestaPropia" />
+
+    <Button
+        android:id="@+id/buttonMainRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recycler"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHttp"
+        app:layout_constraintStart_toStartOf="@+id/buttonHttp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHttp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
