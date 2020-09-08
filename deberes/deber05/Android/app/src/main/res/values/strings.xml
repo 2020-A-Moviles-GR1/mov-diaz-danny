@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ExamenIBAppMoviles</string>
+
+    <string-array name="estados_activo">
+        <item> Si </item>
+        <item> No </item>
+    </string-array>
+
+
+    <string-array name="integrantes_test">
+        <item> Danny Díaz </item>
+        <item> Emanuel Romero </item>
+        <item> Shirley Agila </item>
+        <item> Valentina Arancibia </item>
+    </string-array>
+</resources>
