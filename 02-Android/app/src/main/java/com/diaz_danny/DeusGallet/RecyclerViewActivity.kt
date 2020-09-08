@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class RecyclerViewActivity : AppCompatActivity() {
+
+    var numeroLikes = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
@@ -40,6 +43,12 @@ class RecyclerViewActivity : AppCompatActivity() {
 
 
 
+
+    }
+
+    fun anadirLikesEnActividad(numero: Int){
+        this.numeroLikes += numero
+        textViewTitulo.text = this.numeroLikes.toString()
 
     }
 }

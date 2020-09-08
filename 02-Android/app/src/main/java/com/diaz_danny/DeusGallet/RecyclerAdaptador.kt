@@ -17,12 +17,29 @@ class RecyclerAdaptador(
 
         val nombreTextView: TextView
         val cedulaTextView: TextView
+        val likesTextView: TextView
         val accionButton: Button
+
+        var numeroLikes = 0
 
         init {
             nombreTextView = view.findViewById(R.id.textViewAPNombre)
             cedulaTextView = view.findViewById(R.id.textViewAPCedula)
             accionButton = view.findViewById(R.id.buttonAPAccion)
+            likesTextView = view.findViewById(R.id.textViewAPLikes)
+
+            accionButton.setOnClickListener{
+                this.aumentarNumeroLikes()
+
+            }
+
+
+        }
+
+        fun aumentarNumeroLikes(){
+            numeroLikes+=1
+            likesTextView.text = this.numeroLikes.toString()
+            contexto.anadirLikesEnActividad(1)
         }
 
 
