@@ -59,6 +59,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, RecyclerViewActivity::class.java))
         }
 
+        buttonMainMaps.setOnClickListener{
+            startActivity(Intent(this, MapsActivity::class.java))
+        }
+
 
 
     }

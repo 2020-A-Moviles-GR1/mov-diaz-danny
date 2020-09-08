@@ -78,4 +78,13 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonHttp"
         app:layout_constraintStart_toStartOf="@+id/buttonHttp"
         app:layout_constraintTop_toBottomOf="@+id/buttonHttp" />
+
+    <Button
+        android:id="@+id/buttonMainMaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maps"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMainRecycler"
+        app:layout_constraintStart_toStartOf="@+id/buttonMainRecycler"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMainRecycler" />
 </androidx.constraintlayout.widget.ConstraintLayout>
