@@ -1,0 +1,13 @@
+{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
+{"createdAt":1599590824885,"updatedAt":1599590824885,"id":1,"chat_id":1,"name_group":"test1","date_creation":"2020-08-01","active":true,"mean_delay":12.56,"password":"root123","_id":1}
+{"createdAt":1599592047179,"updatedAt":1599592047179,"id":2,"chat_id":2,"name_group":"test2","date_creation":"2020-08-01","active":true,"mean_delay":12.56,"password":"root123","_id":2}
+{"$$deleted":true,"_id":1}
+{"createdAt":1599590824885,"updatedAt":1599596383215,"id":1,"chat_id":1,"name_group":"test1","date_creation":"2020-08-01","active":false,"mean_delay":12.56,"password":"root123","_id":1}
+{"chat_id":3,"name_group":"test","date_creation":"08/9/2020 03:20:07","active":true,"mean_delay":0.07748405,"password":"pass123","createdAt":1599596446177,"updatedAt":1599596446177,"id":3,"_id":3}
+{"$$deleted":true,"_id":3}
+{"chat_id":3,"name_group":"testmoood","date_creation":"08/9/2020 03:20:07","active":true,"mean_delay":0.07748405,"password":"pass123","createdAt":1599596446177,"updatedAt":1599597005852,"id":3,"_id":3}
+{"$$deleted":true,"_id":3}
+{"chat_id":3,"name_group":"demo","date_creation":"08/9/2020 04:40:56","active":true,"mean_delay":0.30259052,"password":"pass123","createdAt":1599601273384,"updatedAt":1599601273384,"id":4,"_id":4}
+{"$$deleted":true,"_id":4}
+{"chat_id":3,"name_group":"demodifr","date_creation":"08/9/2020 04:40:56","active":true,"mean_delay":0.30259052,"password":"pass123","createdAt":1599601273384,"updatedAt":1599601327875,"id":4,"_id":4}
+{"$$deleted":true,"_id":4}

@@ -1,0 +1,15 @@
+{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
+{"createdAt":1599590832262,"updatedAt":1599590832262,"id":1,"sender":"Dios","message_id":2,"content":"Contenido","date_creation":"2020-08-30","modified":false,"ping_registered":50.7,"chatGroup":1,"_id":1}
+{"createdAt":1599592072531,"updatedAt":1599592072531,"id":2,"sender":"Mensaje Nuevo","message_id":2,"content":"Contenido","date_creation":"2020-08-30","modified":false,"ping_registered":50.7,"chatGroup":2,"_id":2}
+{"sender":"Danny Díaz","message_id":3,"content":"hola","date_creation":"08/9/2020 03:50:47","modified":false,"ping_registered":0.09426957685608683,"chatGroup":2,"createdAt":1599598255783,"updatedAt":1599598255783,"id":3,"_id":3}
+{"$$deleted":true,"_id":2}
+{"createdAt":1599592072531,"updatedAt":1599598920397,"id":2,"sender":"Mensaje Nuevo","message_id":2,"content":"Contenido mod","date_creation":"2020-08-30","modified":true,"ping_registered":50.7,"chatGroup":2,"_id":2}
+{"$$deleted":true,"_id":2}
+{"sender":"Shirley Agila","message_id":3,"content":"fgj","date_creation":"08/9/2020 04:04:54","modified":false,"ping_registered":0.2555074498320915,"chatGroup":2,"createdAt":1599599102566,"updatedAt":1599599102566,"id":4,"_id":4}
+{"$$deleted":true,"_id":4}
+{"sender":"Danny Díaz","message_id":3,"content":"msg","date_creation":"08/9/2020 04:42:45","modified":false,"ping_registered":0.7222335311665454,"chatGroup":4,"createdAt":1599601384317,"updatedAt":1599601384317,"id":5,"_id":5}
+{"sender":"Emanuel Romero","message_id":4,"content":"otro","date_creation":"08/9/2020 04:42:45","modified":false,"ping_registered":0.6164421349013494,"chatGroup":4,"createdAt":1599601456165,"updatedAt":1599601456165,"id":6,"_id":6}
+{"$$deleted":true,"_id":6}
+{"sender":"Emanuel Romero","message_id":4,"content":"otro mensaj","date_creation":"08/9/2020 04:42:45","modified":true,"ping_registered":0.6164421349013494,"chatGroup":4,"createdAt":1599601456165,"updatedAt":1599601475801,"id":6,"_id":6}
+{"$$deleted":true,"_id":5}
+{"sender":"Emanuel Romero","message_id":4,"content":"otro mensaj","date_creation":"08/9/2020 04:42:45","modified":true,"ping_registered":0.6164421349013494,"chatGroup":null,"createdAt":1599601456165,"updatedAt":1599601531423,"id":6,"_id":6}
