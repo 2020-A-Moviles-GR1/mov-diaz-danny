@@ -1,0 +1,9 @@
+{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
+{"chat_id":1,"name_group":"nuevo","date_creation":"24/9/2020 06:53:34","active":true,"mean_delay":0.10068222,"password":"qwe123","createdAt":1600991622257,"updatedAt":1600991622257,"id":1,"_id":1}
+{"$$deleted":true,"_id":1}
+{"chat_id":1,"name_group":"actualizado","date_creation":"24/9/2020 06:53:34","active":false,"mean_delay":0.10068222,"password":"qwe123","createdAt":1600991622257,"updatedAt":1600991642159,"id":1,"_id":1}
+{"$$deleted":true,"_id":1}
+{"chat_id":1,"name_group":"demo","date_creation":"24/9/2020 07:06:31","active":true,"mean_delay":0.2551737,"password":"qwe123","createdAt":1600992421685,"updatedAt":1600992421685,"id":2,"_id":2}
+{"$$deleted":true,"_id":2}
+{"chat_id":1,"name_group":"demoact","date_creation":"24/9/2020 07:06:31","active":true,"mean_delay":0.2551737,"password":"qwe1234","createdAt":1600992421685,"updatedAt":1600992484972,"id":2,"_id":2}
+{"$$deleted":true,"_id":2}

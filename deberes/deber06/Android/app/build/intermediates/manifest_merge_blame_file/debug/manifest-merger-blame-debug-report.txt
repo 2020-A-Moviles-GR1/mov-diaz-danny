@@ -1,0 +1,159 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.diaz_danny.examenibappmoviles"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml
+10
+11    <!--
+12         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+13         Google Maps Android API v2, but you must specify either coarse or fine
+14         location permissions for the "MyLocation" functionality.
+15    -->
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:10:5-79
+16-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:10:22-76
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:11:5-67
+17-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:11:22-64
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:12:5-79
+18-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:12:22-76
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:13:5-81
+19-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:13:22-78
+20    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+20-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:14:5-80
+20-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:14:22-77
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:15:5-65
+21-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:15:22-62
+22
+23    <uses-feature
+23-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+24        android:glEsVersion="0x00020000"
+24-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+25        android:required="true" />
+25-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+26
+27    <application
+27-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:17:5-60:19
+28        android:allowBackup="true"
+28-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:18:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.3.1] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\499867379395f7725d6727688dbdb92d\core-1.3.1\AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+32        android:icon="@mipmap/ic_launcher"
+32-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:19:9-43
+33        android:label="@string/app_name"
+33-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:20:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:21:9-54
+35        android:supportsRtl="true"
+35-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:22:9-35
+36        android:testOnly="true"
+37        android:theme="@style/AppTheme"
+37-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:23:9-40
+38        android:usesCleartextTraffic="true" >
+38-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:24:9-44
+39
+40        <!--
+41             The API key for Google Maps-based APIs is defined as a string resource.
+42             (See the file "res/values/google_maps_api.xml").
+43             Note that the API key is linked to the encryption key used to sign the APK.
+44             You need a different API key for each encryption key, including the release key that is used to
+45             sign the APK for publishing.
+46             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+47        -->
+48        <meta-data
+48-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:36:9-38:55
+49            android:name="com.google.android.geo.API_KEY"
+49-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:37:13-58
+50            android:value="@string/google_maps_key" />
+50-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:38:13-52
+51
+52        <activity
+52-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:40:9-42:68
+53            android:name="com.diaz_danny.examenibappmoviles.MapsActivity"
+53-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:41:13-41
+54            android:label="@string/title_activity_maps" />
+54-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:42:13-56
+55        <activity android:name="com.diaz_danny.examenibappmoviles.ActualizarMensajeActivity" />
+55-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:43:9-63
+55-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:43:19-60
+56        <activity android:name="com.diaz_danny.examenibappmoviles.ChatActivity" />
+56-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:44:9-50
+56-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:44:19-47
+57        <activity
+57-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:45:9-47:73
+58            android:name="com.diaz_danny.examenibappmoviles.ContraseniaActivity"
+58-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:46:13-48
+59            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+59-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:47:13-70
+60        <activity
+60-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:48:9-50:73
+61            android:name="com.diaz_danny.examenibappmoviles.DetallesActivity"
+61-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:49:13-45
+62            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+62-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:50:13-70
+63        <activity android:name="com.diaz_danny.examenibappmoviles.ActualizarGrupoChatActivity" />
+63-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:51:9-65
+63-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:51:19-62
+64        <activity android:name="com.diaz_danny.examenibappmoviles.CrearGrupoChatActivity" />
+64-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:52:9-60
+64-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:52:19-57
+65        <activity android:name="com.diaz_danny.examenibappmoviles.MainActivity" >
+65-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:53:9-59:20
+65-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:53:19-47
+66            <intent-filter>
+66-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:54:13-58:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:55:17-69
+67-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:55:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:57:17-77
+69-->C:\Users\COMPANY\Documents\septimo-semestre\aplicaciones-moviles\mov-diaz-danny\deberes\deber05\Android\app\src\main\AndroidManifest.xml:57:27-74
+70            </intent-filter>
+71        </activity>
+72        <!-- Needs to be explicitly declared on P+ -->
+73        <uses-library
+73-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+74            android:name="org.apache.http.legacy"
+74-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+75            android:required="false" />
+75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1f52946fa98e3bc713e36e8fb788217\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+76
+77        <provider
+77-->[com.squareup.picasso:picasso:2.71828] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\6696c0511576acbc0a1ee4a076b91633\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+78            android:name="com.squareup.picasso.PicassoProvider"
+78-->[com.squareup.picasso:picasso:2.71828] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\6696c0511576acbc0a1ee4a076b91633\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+79            android:authorities="com.diaz_danny.examenibappmoviles.com.squareup.picasso"
+79-->[com.squareup.picasso:picasso:2.71828] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\6696c0511576acbc0a1ee4a076b91633\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+80            android:exported="false" />
+80-->[com.squareup.picasso:picasso:2.71828] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\6696c0511576acbc0a1ee4a076b91633\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+81
+82        <activity
+82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\9ec2f2a8209c127e297d42f850a4d196\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+83            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\9ec2f2a8209c127e297d42f850a4d196\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+84            android:exported="false"
+84-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\9ec2f2a8209c127e297d42f850a4d196\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+85            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+85-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\9ec2f2a8209c127e297d42f850a4d196\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+86
+87        <meta-data
+87-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1e22e0968909a125d1a96eaaa6ef2d7\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+88            android:name="com.google.android.gms.version"
+88-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1e22e0968909a125d1a96eaaa6ef2d7\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+89            android:value="@integer/google_play_services_version" />
+89-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\COMPANY\.gradle\caches\transforms-2\files-2.1\f1e22e0968909a125d1a96eaaa6ef2d7\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+90    </application>
+91
+92</manifest>
