@@ -1,0 +1,2 @@
+rootProject.name='ExamenIBAppMoviles'
+include ':app'
