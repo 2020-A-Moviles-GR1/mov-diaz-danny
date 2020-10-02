@@ -1,0 +1,130 @@
+<form [formGroup]="formGroup" (ngSubmit)="update($event)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Gesto, Función: {{objectData.id_function}}, Usuario: {{objectData.username_user}}</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="id" formControlName="id" matInput type="text" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="id_function" formControlName="id_function" matInput type="text" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="username_user" formControlName="username_user" matInput type="text" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="datetime" formControlName="datetime" matInput type="text" readonly>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <mat-select formControlName="is_augmented_data" matSelect>
+                        <mat-option [value]="true">
+                            Si
+                        </mat-option>
+
+                        <mat-option [value]="false">
+                            No
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_accelerometer_x" formControlName="data_accelerometer_x" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_accelerometer_y" formControlName="data_accelerometer_y" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_accelerometer_z" formControlName="data_accelerometer_z" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_gyroscope_x" formControlName="data_gyroscope_x" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_gyroscope_y" formControlName="data_gyroscope_y" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="data_gyroscope_z" formControlName="data_gyroscope_z" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>       
+
+
+      </mat-card-content>
+  
+      <div class="center-element">
+        <div *ngIf="show_progress">
+          <mat-progress-spinner
+              color="primary"
+              mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+  
+      </div>
+  
+      <mat-card-actions>
+        <button mat-raised-button type="submit" (click)="back()">Volver</button>
+        <button [disabled]="formGroup.invalid || show_progress" mat-raised-button color="primary" type="submit">Actualizar</button>
+      </mat-card-actions>
+    </mat-card>
+  
+  
+  
+  </form>
+  
+  <br><br><br><br><br>
+  

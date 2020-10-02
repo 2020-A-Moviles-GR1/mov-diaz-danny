@@ -1,0 +1,123 @@
+<form autocomplete="off" [formGroup]="formGroup" (ngSubmit)="create($event)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Creación de muestra</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <mat-select formControlName="id_function" placeholder="funciones" matSelect>
+                        <mat-option *ngFor="let function of functions" [value]="function.id">
+                            {{ function.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field class="example-full-width">
+                    <input type="text" placeholder="username_user" matInput
+                           [formControl]="username_userField" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor="let user of users" [value]="user.username">
+                        {{user.username}}
+                      </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+        </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <mat-select formControlName="is_augmented_data" placeholder="¿Es artificial?" [value]='false'>
+                          <mat-option [value]="true">
+                              Si
+                          </mat-option>
+  
+                          <mat-option [value]="false">
+                              No
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_accelerometer_x" formControlName="data_accelerometer_x" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_accelerometer_y" formControlName="data_accelerometer_y" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_accelerometer_z" formControlName="data_accelerometer_z" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_gyroscope_x" formControlName="data_gyroscope_x" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_gyroscope_y" formControlName="data_gyroscope_y" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="data_gyroscope_z" formControlName="data_gyroscope_z" matInput type="text">
+                  </mat-form-field>
+              </div>
+          </div>       
+        
+      </mat-card-content>
+  
+      <div class="center-element">
+        <div *ngIf="show_progress">
+          <mat-progress-spinner
+              color="primary"
+              mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+  
+      </div>
+  
+      <mat-card-actions>
+        <button mat-raised-button type="submit" (click)="back()">Volver</button>
+        <button [disabled]="formGroup.invalid || show_progress" mat-raised-button color="primary" type="submit">Crear</button>
+      </mat-card-actions>
+    </mat-card>
+  
+  
+  
+  </form>
+  
+  <br><br><br><br><br>
+  

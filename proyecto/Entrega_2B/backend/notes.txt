@@ -1,0 +1,110 @@
+MESSAGE STANDARD
+
+FROM-SERVER: {
+	id_message: "",
+	server_message: "",
+	error: "",
+	metadata: ""
+	data: [
+		{
+
+		}
+	]
+}
+
+FROM-CLIENT: {
+	id: 1,
+	data: "my-message"
+}
+
+
+Chat mode
+
+connections.forEach(element => {
+	if (element != connection)
+		element.sendUTF(mes.utf8Data)
+		element.sendUTF('{"name": "otro", "message":"OTRO"}')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const webClient = require('./web_client')
+
+//webClient.client.connect(url_websocket, config.protocol);
+
+
+
+var WebSocketClient = require('websocket').client;
+const config = require('./config')
+
+var client = new WebSocketClient();
+
+var web_connections = []
+var web_rooms_associated = []
+
+const url_websocket =  'ws://'+config.ip+':'+config.port_socket+'/'
+
+const log = require('./utils').log
+const CONTEXT_WEB_SOCKET_CLIENT = 'WEBSOCKET_CLIENT'
+
+client.on('connectFailed', function(error) {
+    log(CONTEXT_WEB_SOCKET_CLIENT, url_websocket + ', Connect Error: ' + error.toString());
+});
+
+client.on('connect', function(connection) {
+
+    web_connections.push(connection)
+    const room = Math.round(Math.random() *1000)
+    web_rooms_associated.push(room)
+
+    log(CONTEXT_WEB_SOCKET_CLIENT, 'Room generated id: ' + room);
+
+    const client_msg = {
+      id: 1001,  // 1001 = room única creada para una connección
+      data: room
+    }
+    connection.sendUTF(JSON.stringify(client_msg));
+
+
+    connection.on('error', function(error) {
+        log(CONTEXT_WEB_SOCKET_CLIENT, "Connection Error: " + error.toString());
+    });
+    connection.on('close', function() {
+        log(CONTEXT_WEB_SOCKET_CLIENT, 'Connection Closed');
+    });
+    connection.on('message', function(message) {
+        if (message.type === 'utf8') {
+            log(CONTEXT_WEB_SOCKET_CLIENT, "Received: '" + message.utf8Data + "'");
+        }
+    });
+
+});
+
+var web_connections = []
+var web_rooms_associated = []
+
+function getWebConnections(){
+  return web_connections
+}
+
+function getWebRoomsAssociated(){
+  return web_rooms_associated
+}
+
+module.exports = {
+  client, getWebConnections, getWebRoomsAssociated
+}

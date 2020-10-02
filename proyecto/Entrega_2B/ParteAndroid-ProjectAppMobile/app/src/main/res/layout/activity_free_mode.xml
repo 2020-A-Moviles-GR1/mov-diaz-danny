@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module_game_room.view.FreeModeActivity"
+    android:background="@drawable/background_bubbles"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFreeModeHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_game_room" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFreeModeHelp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_light"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@android:drawable/ic_menu_help"
+            android:tint="@color/colorPrimaryDark" />
+
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChartFreeMode"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/linearLayoutFreeModeHead"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFreeModeChecks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/lineChartFreeMode"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBoxShowAccelerometerChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Show Accelerometer chart" />
+
+        <CheckBox
+            android:id="@+id/checkBoxShowGyroscopeChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Show Gyroscope chart" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewFreeModeMessages"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/linearLayoutFreeModeChecks"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:alpha="0.7"
+        android:background="@color/colorAppPrimary"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/colorWhite" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewFreeModeMessages"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFreeModeSensibilidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSensibility1"
+                        style="@style/textViewNormalText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_sensibility_1"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFreeModeSensibility1Help"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorAppPrimary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@android:drawable/ic_menu_help"
+                        android:tint="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+
+                <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                    android:id="@+id/rangeSeekbarFreeModeSensibility1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_color="@color/colorAppSecundary"
+                    app:bar_highlight_color="@color/colorAppPrimary"
+                    app:data_type="_integer"
+                    app:left_thumb_color="@color/colorAppPrimary"
+                    app:left_thumb_color_pressed="@color/colorPrimary"
+                    app:max_value="50"
+                    app:min_value="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSensibility2"
+                        style="@style/textViewNormalText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_sensibility_2"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFreeModeSensibility2Help"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorAppPrimary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@android:drawable/ic_menu_help"
+                        android:tint="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+
+                <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                    android:id="@+id/rangeSeekbarFreeModeSensibility2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_color="@color/colorAppSecundary"
+                    app:bar_highlight_color="@color/colorAppPrimary"
+                    app:data_type="_integer"
+                    app:left_thumb_color="@color/colorAppPrimary"
+                    app:left_thumb_color_pressed="@color/colorPrimary"
+                    app:max_value="50"
+                    app:min_value="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSensibility3"
+                        style="@style/textViewNormalText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_sensibility_3"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFreeModeSensibility3Help"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorAppPrimary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@android:drawable/ic_menu_help"
+                        android:tint="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+
+                <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                    android:id="@+id/rangeSeekbarFreeModeSensibility3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_color="@color/colorAppSecundary"
+                    app:bar_highlight_color="@color/colorAppPrimary"
+
+                    app:data_type="_integer"
+                    app:left_thumb_color="@color/colorAppPrimary"
+                    app:left_thumb_color_pressed="@color/colorPrimary"
+                    app:max_value="50"
+                    app:min_value="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonFreeModeSaveConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_enabled_disabled"
+
+                    android:text="@string/text_save_config"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/buttonFreeModeBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_enabled_disabled"
+                    android:text="@string/string_back"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+DELETE FROM sample WHERE id_function=1 AND username_user='user_test' 
+
+http://localhost/mov-gestures/backend/public_html/api/module_gestures/get_samples_of_gesture.php?id_function=1&username_user=user_test
+
+DELETE FROM gesture WHERE username_user='user_test'
+
+Cuando hay underfitting, aumentar neuronas mejora el entendimiento
+
+.toString es muy rápido, ayuda a solucionar puntos críticos

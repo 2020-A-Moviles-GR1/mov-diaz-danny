@@ -1,0 +1,90 @@
+<div>
+  <form [formGroup]="formGroup" (ngSubmit)="searchData($event)">
+
+
+    Buscador:
+
+    <mat-form-field style="padding-right: 30px; padding-left:20px; width: 300px">
+      <mat-label>Seleccione el método de búsqueda</mat-label>
+      <mat-select formControlName="search_method">
+        <mat-option *ngFor="let search_method of search_methods" [value]="search_method.code">
+          {{search_method.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+    <mat-form-field style="padding-right: 30px; width: 300px">
+      <mat-label>Escriba el valor</mat-label>
+      <input placeholder="search_value" formControlName="search_value" matInput type="text">
+    </mat-form-field>
+
+    <button [disabled]="formGroup.invalid" mat-raised-button color="primary" type="submit">Buscar</button>
+
+
+  </form>
+
+</div>
+
+<div class="center-element">
+  <div *ngIf="show_progress">
+    <mat-progress-spinner
+        color="primary"
+        mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+
+<div *ngIf="is_search">
+  <button mat-stroked-button color="primary" (click)="getAll()">Ver todos los datos</button>
+  <h1 *ngIf="!data_exists">No hay ningun resultado que coincida con la busqueda</h1>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="actions" >
+   <th mat-header-cell *matHeaderCellDef> Acciones </th>
+   <td mat-cell *matCellDef="let objectData" class="actions">
+     <button mat-icon-button color="primary" (click)="navigateToUpdate(objectData)">
+       <mat-icon>edit</mat-icon>
+     </button>
+     <button mat-icon-button color="primary" (click)="delete(objectData)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="watchSamples(objectData)">
+     <mat-icon>visibility</mat-icon>
+   </button>
+   </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id_function">
+   <th mat-header-cell *matHeaderCellDef> Id de función </th>
+   <td mat-cell *matCellDef="let objectData"> {{objectData.id_function}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="username_user">
+    <th mat-header-cell *matHeaderCellDef> Usuario </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.username_user}} </td>
+   </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.name}} </td>
+   </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<hr>
+
+<div *ngIf="!is_search">
+  <button mat-stroked-button color="primary"
+          (click)="getMore()">Cargar más</button>
+  <h2 *ngIf="!data_exists">No se encontraron más datos</h2>
+</div>
+
+<br><br><br>

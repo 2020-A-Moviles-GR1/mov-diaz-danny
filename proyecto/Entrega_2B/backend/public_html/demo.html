@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+
+    body{
+      background-image: url('night.jpg');
+      background-repeat: repeat;
+    }
+
+    #room_info{
+      color: rgb(44, 204, 151);
+      text-align: center;
+    }
+
+    .buttonDemo {
+      width: 200px;
+      height: 50px;
+    }
+
+    .buttonDemo:focus {
+      outline: none !important;
+      border:1px solid red;
+      box-shadow: 0 0 10px #719ECE;
+      background: yellow;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <h1 id="room_info"></h1>
+<!--
+  <button id="mock_disparo" onclick="disparo()">MOCK disparo</button>
+  <button id="mock_corte_izquierda" onclick="corte_izquierda()">MOCK corte_izquierda</button>
+  <button id="mock_corte_derecha" onclick="corte_derecha()">MOCK corte_derecha</button>
+  <button onclick="focusPrevious()">MOCK focusPrevious</button>
+  <button onclick="focusNext()">MOCK focusNext</button>
+  <button onclick="selectElement()">MOCK Select</button>
+
+  <hr>-->
+  <center>
+
+    <button onclick="abrirEnlace('https://google.com')" class="buttonDemo tabable">BOTÓN 1</button>
+    <button onclick="abrirEnlace('https://youtube.com')" class="buttonDemo tabable">BOTÓN 2</button>
+    <button onclick="abrirEnlace('https://facebook.com')" class="buttonDemo tabable">BOTÓN 3</button>
+
+    <hr>
+    <canvas width="1000" height="400" id="dibujito"></canvas>
+  </center>
+
+  <script type="text/javascript">
+    var room_info = document.getElementById('room_info');
+    var canvas = document.getElementById("dibujito")
+    var lienzo = canvas.getContext("2d")
+    const ANCHO = 1000;
+    const ALTO = 400;
+    const LARGO_LINEA = 90;
+
+    dibujarRectanguloLleno(0, 0, ANCHO, ALTO, 'white', lienzo)
+      
+    
+
+    var socket = new WebSocket('ws://192.168.1.6:8080', 'echo-protocol');
+
+    socket.onopen = function () {
+
+      const client_msg = {
+        id: 1001,  // 1001 = room única creada para una connección
+        data: "onopen"
+      }
+      socket.send(JSON.stringify(client_msg));
+    };
+
+
+
+    socket.onmessage = function (message) {
+
+      var data = JSON.parse(message.data)
+      console.log(data)
+
+      if (data.id_message == 1001) {
+        room_info.innerHTML = 'Room: ' + data.metadata;
+      }
+
+      else if (data.id_message == 102) {
+        // funciones pre hechas
+        const user = data.data[0]
+        const id_function = parseInt(data.data[1])
+        const data_room = parseInt(data.data[2])
+
+        room_info.innerHTML = 'Room: ' + data_room + ', Usuario: ' + user + ', Función: ' + id_function;
+
+        if(id_function == 15){
+          disparo();
+        }
+        else if(id_function == 16){
+          
+        }
+        else if(id_function == 17){
+          
+        }
+        else if(id_function == 18){
+          corte_izquierda();
+        }
+        else if(id_function == 19){
+          corte_derecha();
+        }
+        else if(id_function == 20){
+		  focusNext();
+        }
+      }
+
+    };
+
+    socket.onerror = function (error) {
+      console.log('WebSocket error: ' + error);
+    };
+
+    
+
+    function disparo(){
+      // alert("disparo")
+      let centro_x = Math.ceil(Math.random() * ANCHO)
+      let centro_y = Math.ceil(Math.random() * ALTO)
+
+      dibujarLinea(
+        centro_x-(LARGO_LINEA/2), centro_y-(LARGO_LINEA/2), 
+        centro_x+(LARGO_LINEA/2), centro_y+(LARGO_LINEA/2), 
+        'red', lienzo
+      )
+
+      dibujarLinea(
+        centro_x-(LARGO_LINEA/2), centro_y+(LARGO_LINEA/2), 
+        centro_x+(LARGO_LINEA/2), centro_y-(LARGO_LINEA/2), 
+        'red', lienzo
+      )
+
+
+    }
+
+    function corte_izquierda(){
+      // alert("corte_izquierda")
+
+      let centro_x = Math.ceil(Math.random() * ANCHO)
+      let centro_y = Math.ceil(Math.random() * ALTO)
+
+      dibujarLinea(
+        centro_x-(LARGO_LINEA*1.5), centro_y, 
+        centro_x+LARGO_LINEA/2, centro_y, 
+        'blue', lienzo
+      )
+
+      dibujarLinea(
+        centro_x-(LARGO_LINEA*1.5), centro_y, 
+        centro_x-LARGO_LINEA, centro_y-(LARGO_LINEA/2), 
+        'blue', lienzo
+      )
+
+      dibujarLinea(
+        centro_x-(LARGO_LINEA*1.5), centro_y, 
+        centro_x-LARGO_LINEA, centro_y+(LARGO_LINEA/2), 
+        'blue', lienzo
+      )
+
+    }
+
+    function corte_derecha(){
+      // alert("corte_derecha")
+      let centro_x = Math.ceil(Math.random() * ANCHO)
+      let centro_y = Math.ceil(Math.random() * ALTO)
+
+      dibujarLinea(
+        centro_x-LARGO_LINEA/2, centro_y, 
+        centro_x+(LARGO_LINEA*1.5), centro_y, 
+        'green', lienzo
+      )
+
+      dibujarLinea(
+        centro_x+(LARGO_LINEA*1.5), centro_y, 
+        centro_x+(LARGO_LINEA), centro_y-(LARGO_LINEA/2), 
+        'green', lienzo
+      )
+
+      dibujarLinea(
+        centro_x+(LARGO_LINEA*1.5), centro_y, 
+        centro_x+(LARGO_LINEA), centro_y+(LARGO_LINEA/2), 
+        'green', lienzo
+      )
+    }
+
+    function abrirEnlace(url){
+
+      window.open(url); 
+
+    }
+
+    var index = -1;
+
+    function focusPrevious(){
+
+      var tabbables = document.querySelectorAll(".tabable"); //get all tabable elements
+      // console.log(tabbables)
+      
+      index -= 1;
+      if(index < 0){
+        index = tabbables.length-1;
+      }
+
+      tabbables[index].focus();
+
+    }
+
+
+    function focusNext(){
+
+      var tabbables = document.querySelectorAll(".tabable"); //get all tabable elements
+      // console.log(tabbables)
+      
+      index += 1;
+      if(index == tabbables.length){
+        index = 0;
+      }
+
+      tabbables[index].focus();
+      
+
+    }
+
+    function selectElement(){
+      if(index < 0){
+        return
+      }
+      var tabbables = document.querySelectorAll(".tabable"); //get all tabable elements
+      tabbables[index].click();
+    }
+
+
+    
+    function dibujarLinea(x1, y1, x2, y2, color, lienzo){
+      lienzo.beginPath()  // inicia el dibujo
+      lienzo.strokeStyle = color
+      lienzo.lineWidth = 10  // Freddy mostró esto luego, no lo puso todo a la vez
+      lienzo.moveTo(x1, y1)
+      lienzo.lineTo(x2, y2)
+      lienzo.stroke()  // dibuja el camino
+      lienzo.closePath()  // levanta el lapiz, termina
+      // Importante: si no pongo el closePath la siguiente linea inicia desde el último punto
+    }
+
+    function dibujarRectanguloLleno(x, y, ancho, alto, color, lienzo){
+      lienzo.beginPath()  // inicia el dibujo
+      lienzo.fillStyle = color
+      lienzo.rect(x, y, ancho, alto)
+      lienzo.fill()  // dibuja el camino
+      lienzo.closePath()  // levanta el lapiz, termina
+      // Importante: si no pongo el closePath la siguiente linea inicia desde el último punto
+    }
+
+  </script>
+</body>
+
+</html>

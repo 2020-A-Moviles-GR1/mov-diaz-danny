@@ -1,0 +1,73 @@
+<form autocomplete="off" [formGroup]="formGroup" (ngSubmit)="update($event)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Cambio de contraseña</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="username" formControlName="username" matInput type="text" readonly>
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input placeholder="full_name" formControlName="full_name" matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+          <h2> Opcional si desea cambiar la contraseña </h2>
+          <div class="row">
+              <div class="col-xs">
+                  <mat-form-field>
+                      <input placeholder="password" formControlName="password" matInput type="password">
+                  </mat-form-field>
+              </div>
+          </div>
+
+          <div *ngIf="formGroup.get('password').dirty">
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="confirmar contraseña" formControlName="confirm_password" matInput type="password">
+                    </mat-form-field>
+                </div>
+            </div>
+          </div>
+
+          
+  
+          
+  
+        
+      </mat-card-content>
+  
+      <div class="center-element">
+        <div *ngIf="show_progress">
+          <mat-progress-spinner
+              color="primary"
+              mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+  
+      </div>
+  
+      <mat-card-actions>
+        <button mat-raised-button type="submit" (click)="back()">Volver</button>
+        <button [disabled]="(!formGroup.get('full_name').dirty && !formGroup.get('password').dirty) || formGroup.invalid || show_progress" mat-raised-button color="primary" type="submit">Actualizar</button>
+      </mat-card-actions>
+    </mat-card>
+  
+  
+  
+  </form>
+  
+  <br><br><br><br><br>
+  
