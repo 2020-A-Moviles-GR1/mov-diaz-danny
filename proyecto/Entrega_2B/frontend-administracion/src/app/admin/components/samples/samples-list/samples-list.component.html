@@ -1,0 +1,132 @@
+<div class="profile-card">
+    <div class="header">
+        <h2>Gesto: {{ gestureParent.name }}</h2>
+        <h4>
+          Función: {{ gestureParent.id_function }}
+          <br>
+          Usuario: {{ gestureParent.username_user }}
+        </h4>
+    </div>
+</div>
+
+<hr>
+
+<button mat-raised-button color="primary" type="submit" (click)="back()">Regresar</button>
+<button mat-raised-button (click)="navigateToCreate()">Crear una nueva muestra </button>
+
+<div>
+  <form [formGroup]="formGroup" (ngSubmit)="searchData($event)">
+
+
+    Buscador:
+
+    <mat-form-field style="padding-right: 30px; padding-left:20px; width: 300px">
+      <mat-label>Seleccione el método de búsqueda</mat-label>
+      <mat-select formControlName="search_method">
+        <mat-option *ngFor="let search_method of search_methods" [value]="search_method.code">
+          {{search_method.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+    <mat-form-field style="padding-right: 30px; width: 300px">
+      <mat-label>Escriba el valor</mat-label>
+      <input placeholder="search_value" formControlName="search_value" matInput type="text">
+    </mat-form-field>
+
+    <button [disabled]="formGroup.invalid" mat-raised-button color="primary" type="submit">Buscar</button>
+
+
+  </form>
+
+</div>
+
+<div class="center-element">
+  <div *ngIf="show_progress">
+    <mat-progress-spinner
+        color="primary"
+        mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+</div>
+
+
+<div *ngIf="is_search">
+  <button mat-stroked-button color="primary" (click)="getAll()">Ver todos los datos</button>
+  <h1 *ngIf="!data_exists">No hay ningun resultado que coincida con la busqueda</h1>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="actions" >
+   <th mat-header-cell *matHeaderCellDef> Acciones </th>
+   <td mat-cell *matCellDef="let objectData" class="actions">
+     <button mat-icon-button color="primary" (click)="navigateToUpdate(objectData)">
+       <mat-icon>edit</mat-icon>
+     </button>
+     <button mat-icon-button color="primary" (click)="delete(objectData)">
+      <mat-icon>delete</mat-icon>
+    </button>
+   </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+   <th mat-header-cell *matHeaderCellDef> Id </th>
+   <td mat-cell *matCellDef="let objectData"> {{objectData.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="datetime">
+    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.datetime}} </td>
+   </ng-container>
+
+   <ng-container matColumnDef="is_augmented_data">
+    <th mat-header-cell *matHeaderCellDef> ¿Es data artificial? </th>
+    <td mat-cell *matCellDef="let objectData"> {{ (objectData.is_augmented_data)? "Si" : "No"}} </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_accelerometer_x">
+    <th mat-header-cell *matHeaderCellDef> Accelerometro X </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_accelerometer_x  | slice:0:20}} ... </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_accelerometer_y">
+    <th mat-header-cell *matHeaderCellDef> Accelerometro Y </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_accelerometer_y  | slice:0:20}} ... </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_accelerometer_z">
+    <th mat-header-cell *matHeaderCellDef> Accelerometro Z </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_accelerometer_z  | slice:0:20}} ... </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_gyroscope_x">
+    <th mat-header-cell *matHeaderCellDef> Giroscopio X </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_gyroscope_x  | slice:0:20}} ... </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_gyroscope_y">
+    <th mat-header-cell *matHeaderCellDef> Giroscopio Y </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_gyroscope_y  | slice:0:20}} ... </td>
+   </ng-container>
+
+   <ng-container matColumnDef="data_gyroscope_z">
+    <th mat-header-cell *matHeaderCellDef> Giroscopio Z </th>
+    <td mat-cell *matCellDef="let objectData"> {{objectData.data_gyroscope_z  | slice:0:20}} ... </td>
+   </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<hr>
+
+<div *ngIf="!is_search">
+  <h2 *ngIf="!data_exists">No se encontraron más datos</h2>
+</div>
+
+<br><br><br>

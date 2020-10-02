@@ -1,0 +1,64 @@
+<form [formGroup]="formGroup" (ngSubmit)="update($event)">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Función: {{objectData.name}}</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="id" formControlName="id" matInput type="text" readonly>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="name" formControlName="name" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="description" formControlName="description" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+              <mat-form-field>
+                <input placeholder="function_type_id" formControlName="function_type_id" matInput type="number" min="1" max="3">
+              </mat-form-field>
+            </div>
+          </div>
+
+      </mat-card-content>
+  
+      <div class="center-element">
+        <div *ngIf="show_progress">
+          <mat-progress-spinner
+              color="primary"
+              mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+  
+      </div>
+  
+      <mat-card-actions>
+        <button mat-raised-button type="submit" (click)="back()">Volver</button>
+        <button [disabled]="formGroup.invalid || show_progress" mat-raised-button color="primary" type="submit">Actualizar</button>
+      </mat-card-actions>
+    </mat-card>
+  
+  
+  
+  </form>
+  
+  <br><br><br><br><br>
+  

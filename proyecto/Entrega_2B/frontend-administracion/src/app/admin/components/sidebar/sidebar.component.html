@@ -1,0 +1,62 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        
+      <mat-nav-list>
+
+        <div class="profile-card">
+            <div class="header">
+                <h2>{{ user.username }}</h2>
+                <h4>
+                  {{ user.full_name }}
+                  <br>
+                  Administrador
+                </h4>
+            </div>
+            <img src="https://picsum.photos/200/300" alt="foto">
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h2 matSubheader class="center-element">Cuadro de mando</h2>
+
+        <div class="menu">
+          <a mat-list-item 
+            routerLinkActive="submenu_active" 
+            routerLink="/admin/functions/list"
+            (click)="toggleMenuSelection(0)"
+            >
+            Funciones
+          </a>
+        </div>
+
+        <div class="menu">
+          <a mat-list-item 
+            routerLinkActive="submenu_active" 
+            routerLink="/admin/gestures/list"
+            (click)="toggleMenuSelection(1)"
+            >
+            Gestos
+          </a>
+        </div>
+
+        <div class="menu">
+          <a mat-list-item 
+            routerLinkActive="submenu_active" 
+            routerLink="/admin/users/list"
+            (click)="toggleMenuSelection(2)"
+            >
+            Usuarios
+          </a>
+        </div>
+
+      </mat-nav-list>
+
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>

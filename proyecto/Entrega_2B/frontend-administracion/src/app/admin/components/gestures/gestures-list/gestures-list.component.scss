@@ -1,0 +1,28 @@
+
+
+table.mat-table {
+    width:auto;
+    border: 1px solid black;
+  }
+  
+  th.mat-header-cell {
+    text-align: center !important;
+    font-weight: bold;
+    border: 1px solid #dae2f0;
+    min-width: 120px;
+  }
+  
+  
+  td.mat-cell {
+    text-align: center !important;
+    padding: 10px;
+    border: 1px solid #c8d4e8;
+    width: auto;
+  }
+  
+  
+  tr.mat-header-cell.actions td.mat-cell.actions:last-child{
+      max-width: 100%;
+      white-space:nowrap;
+  }
+  
